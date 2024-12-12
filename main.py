@@ -7,7 +7,7 @@ import csv
 
 def get_joke() -> dict:
     try:
-        joke = requests.get("https://official-joke-api.appspot.com/random_joe")
+        joke = requests.get("https://official-joke-api.appspot.com/random_joke")
         return joke.json()
     except JSONDecodeError:
         if joke.status_code != 200:
