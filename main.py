@@ -1,17 +1,17 @@
 from json import JSONDecodeError
 
 import requests
-import json
 from datetime import datetime
 import csv
 
 
-def get_joke() -> json:
+def get_joke() -> dict:
     try:
-        joke = requests.get("https://official-joke-api.appspot.com/random_joke")
+        joke = requests.get("https://official-joke-api.appspot.com/random_joe")
         return joke.json()
     except JSONDecodeError:
-        raise ValueError("Something went wrong with website")
+        if joke.status_code != 200:
+            raise ValueError(f"Something wrong with web site (Status Code:{joke.status_code})")
 
 
 def save_joke(setup: str, punchline: str) -> None:
