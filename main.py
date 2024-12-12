@@ -38,8 +38,7 @@ def tell_jokes() -> None:
 
 
 def main() -> None:
-    # this is an entrypoint, DO NOT WRITE ALL CODE HERE !!!
-    # ToDo remove these comments
+    # initial row names for file
     with open("jokes_history.csv", "a", newline="") as joke_file:
         joke_writer = csv.writer(joke_file)
         joke_writer.writerow(
